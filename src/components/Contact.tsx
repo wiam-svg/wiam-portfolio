@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from "emailjs-com";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,20 +15,28 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Message envoyé !",
-      description: "Je vous répondrai dans les plus brefs délais.",
-    });
-    
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs.send(
+    "service_lfsouxj",     // Remplace par ton service ID EmailJS
+    "template_0ltcupc",    // Remplace par ton template ID
+    formData,         // Les données du formulaire
+    "S75ggYBGSq8dpbJ3D"      // Clé publique EmailJS
+  )
+  .then(() => {
+    alert("Message envoyé !");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  })
+  .catch((err) => {
+    console.error(err);
+    alert("Erreur lors de l'envoi du message.");
+  });
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -39,14 +49,14 @@ const Contact = () => {
     {
       icon: <Mail className="text-primary" size={24} />,
       title: "Email",
-      value: "wiam.aitelkadi@email.com",
-      link: "mailto:wiam.aitelkadi@email.com"
+      value: "aitelkadiwiam@email.com",
+      link: "mailto:aitelkadiwiam@email.com"
     },
     {
       icon: <Phone className="text-primary" size={24} />,
       title: "Téléphone",
-      value: "+212 6XX XXX XXX",
-      link: "tel:+212600000000"
+      value: "+212 702 207 281",
+      link: "tel:+212702207281"
     },
     {
       icon: <MapPin className="text-primary" size={24} />,
@@ -72,8 +82,8 @@ const Contact = () => {
     {
       icon: <Mail size={20} />,
       name: "Email",
-      url: "mailto:wiam.aitelkadi@email.com",
-      username: "wiam.aitelkadi@email.com"
+      url: "mailto:aitelkadiwiam@email.com",
+      username: "aitelkadiwiam@email.com"
     }
   ];
 
@@ -91,17 +101,16 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="slide-up">
             <h3 className="text-2xl font-semibold mb-8">Restons en contact</h3>
-            
+
+            {/* Contact Info */}
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <div className="flex-shrink-0">
-                    {info.icon}
-                  </div>
+                  <div className="flex-shrink-0">{info.icon}</div>
                   <div>
                     <h4 className="font-medium">{info.title}</h4>
-                    <a 
-                      href={info.link} 
+                    <a
+                      href={info.link}
                       className="text-light hover:text-primary transition-colors"
                     >
                       {info.value}
@@ -109,6 +118,36 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
+
+              {/* Bouton Télécharger mon CV */}
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v8m0 0l-4-4m4 4l4-4M12 4v8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-medium">Mon CV</h4>
+                  <a
+                    href="/mon_cv.pdf"
+                    download
+                    className="text-light hover:text-primary transition-colors"
+                  >
+                    Télécharger
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Social Links */}
@@ -138,7 +177,7 @@ const Contact = () => {
               <CardContent className="p-6">
                 <h4 className="font-semibold text-primary mb-2">Prête à collaborer !</h4>
                 <p className="text-light text-sm mb-4">
-                  Je suis disponible pour des missions de développement, des projets innovants 
+                  Je suis disponible pour des missions de développement, des projets innovants
                   ou des collaborations en équipe.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -221,8 +260,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full hero-gradient hover:opacity-90 transition-opacity"
                     size="lg"
                   >

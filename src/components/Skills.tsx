@@ -21,7 +21,7 @@ const Skills = () => {
     {
       icon: <Palette className="text-primary" size={28} />,
       title: "Outils & Design",
-      skills: ["Power Designer", "Git", "VS Code", "Figma",'Staruml','Jira']
+      skills: ["Power Designer", "Git", "VS Code", "Figma",'Staruml','Jira','Power BI']
     }
   ];
 
@@ -63,7 +63,7 @@ const Skills = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover-lift glass-effect">
               <h4 className="font-semibold text-primary mb-2">Intelligence Artificielle</h4>
-              <p className="text-light text-sm">Intégration IA, Machine Learning, Solutions innovantes</p>
+              <p className="text-light text-sm">Intégration IA, Solutions innovantes</p>
             </div>
             <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover-lift glass-effect">
               <h4 className="font-semibold text-primary mb-2">Développement Full-Stack</h4>

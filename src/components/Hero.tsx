@@ -30,14 +30,13 @@ const Hero = () => {
               >
                 <a href="#projects">Voir mes projets</a>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="hover-lift"
-                asChild
-              >
-                <a href="#contact">Me contacter</a>
-              </Button>
+           <Button variant="outline" size="lg" className="hover-lift">
+  <a href="/WIAMAITELKADI.pdf" download className="w-full h-full flex items-center justify-center">
+    Télécharger mon CV
+  </a>
+</Button>
+
+
             </div>
 
             {/* Social Links */}

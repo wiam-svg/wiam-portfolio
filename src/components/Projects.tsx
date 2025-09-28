@@ -34,15 +34,15 @@ const Projects = () => {
 
   const upcomingProjects = [
     {
-      title: "To-Do-List Platform",
-      description: "une plateforme web de gestion des tâche.",
-      technologies: ['Next.js', 'React', 'Laravel', 'TailwindCSS'],
+      title: "Réseau Social Lauréats OFPPT",
+      description: "Plateforme de réseau social dédiée aux lauréats de l'OFPPT avec fonctionnalités de chat, publications et gestion de profils.",
+      technologies: ['React', 'Laravel', 'TailwindCSS'],
       status: ""
     },
     {
       title: "Annuaire des entreprises locales",
       description: "un annuaire en ligne des entreprises locales.",
-      technologies: ['Vue.js', 'Laravel', 'React', 'MongoDB', 'Tailwind CSS'],
+      technologies: ['Laravel', 'React','Tailwind CSS'],
       status: ""
     }
   ];
@@ -106,7 +106,7 @@ const Projects = () => {
                     </p>
 
                     {/* Project Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-primary/5 rounded-lg">
+                    {/* <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-primary/5 rounded-lg">
                       <div className="text-center">
                         <div className="text-xl font-bold text-primary flex items-center justify-center gap-1">
                           <Users size={16} />
@@ -128,7 +128,7 @@ const Projects = () => {
                         </div>
                         <div className="text-xs text-light">Satisfaction</div>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Features */}
                     <div className="mb-6">
@@ -163,7 +163,7 @@ const Projects = () => {
 
         {/* Upcoming Projects */}
         <div className="fade-in">
-          <h3 className="text-2xl font-semibold mb-8 text-center"> Auter Projets </h3>
+          <h3 className="text-2xl font-semibold mb-8 text-center"> Autres Projets </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {upcomingProjects.map((project, index) => (
               <Card key={index} className="project-card border-0 slide-up" style={{ animationDelay: `${index * 0.1}s` }}>

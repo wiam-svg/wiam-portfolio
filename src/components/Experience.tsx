@@ -17,7 +17,7 @@ const Experience = () => {
         "Système de commentaires et alertes automatiques",
         "Interface utilisateur moderne et responsive"
       ],
-      skills: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"]
+      skills: ["React", "Laravel", "MySQL", "Tailwind css", "Inertia", "API"]
     },
     {
       title: "Caissière & Responsable",
@@ -28,7 +28,7 @@ const Experience = () => {
       description: "Gestion complète des opérations commerciales et supervision d'équipe",
       achievements: [
         "Gestion efficace des stocks et inventaires",
-        "Supervision et formation d'une équipe de 3 personnes",
+        "Supervision et formation d'une équipe de 8 personnes",
         "Excellence dans le service client et satisfaction clientèle",
         "Optimisation des processus de vente",
         "Gestion des encaissements et rapports quotidiens"
@@ -92,7 +92,7 @@ const Experience = () => {
                           {exp.company}
                         </div>
                         <div className="flex items-center gap-2 text-light text-sm">
-                          <MapPin size={16} />
+                          {/* <MapPin size={16} /> */}
                           {exp.type}
                         </div>
                       </div>
@@ -142,7 +142,7 @@ const Experience = () => {
                   <h4 className="font-semibold">DTS en Développement Digital</h4>
                 </div>
                 <p className="text-light mb-2">Institut Spécialisé de Technologie Appliquée HH1</p>
-                <p className="text-light text-sm">Formation Full-Stack complète • 2025</p>
+                <p className="text-light text-sm">Formation Full-Stack complète • 2023-2025</p>
               </CardContent>
             </Card>
             
@@ -153,7 +153,7 @@ const Experience = () => {
                   <h4 className="font-semibold">Formation Intelligence Artificielle</h4>
                 </div>
                 <p className="text-light mb-2">Intégrateur IA</p>
-                <p className="text-light text-sm">Spécialisation IA et Machine Learning • 2023-2025</p>
+                <p className="text-light text-sm">Spécialisation IA • 2025</p>
               </CardContent>
             </Card>
           </div>
