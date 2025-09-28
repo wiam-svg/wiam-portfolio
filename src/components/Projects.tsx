@@ -36,7 +36,7 @@ const Projects = () => {
     {
       title: "Réseau Social Lauréats OFPPT",
       description: "Plateforme de réseau social dédiée aux lauréats de l'OFPPT avec fonctionnalités de chat, publications et gestion de profils.",
-      technologies: ['React', 'Laravel', 'TailwindCSS'],
+      technologies: ['Html', 'JS', 'CSS','PhP'],
       status: ""
     },
     {
