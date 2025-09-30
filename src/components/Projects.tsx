@@ -42,7 +42,7 @@ const Projects = () => {
     {
       title: "Annuaire des entreprises locales",
       description: "un annuaire en ligne des entreprises locales.",
-      technologies: ['Laravel', 'React','Tailwind CSS'],
+      technologies: ['Vite', 'React','Tailwind CSS','Radix UI','Shadcn/ui'],
       status: ""
     }
   ];
@@ -81,14 +81,14 @@ const Projects = () => {
                   <CardHeader className="p-0 mb-6">
                     <div className="flex items-start justify-between mb-2">
                       <CardTitle className="text-2xl text-primary">{project.title}</CardTitle>
-                      <div className="flex gap-2">
+                      {/* <div className="flex gap-2">
                         <Button variant="ghost" size="icon" className="hover:text-primary">
                           <Github size={20} />
                         </Button>
                         <Button variant="ghost" size="icon" className="hover:text-primary">
                           <ExternalLink size={20} />
                         </Button>
-                      </div>
+                      </div> */}
                     </div>
                     <p className="text-light font-medium">{project.subtitle}</p>
                     <div className="flex items-center gap-4 text-sm text-light mt-2">

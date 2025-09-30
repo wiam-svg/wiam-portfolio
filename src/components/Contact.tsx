@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin, WheatIcon, ChartBar, ChartBarBig, ZapIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -50,8 +50,8 @@ const handleSubmit = (e) => {
     {
       icon: <Mail className="text-primary" size={24} />,
       title: "Email",
-      value: "aitelkadiwiam@email.com",
-      link: "mailto:aitelkadiwiam@email.com"
+      value: "aitelkadiwiam@gamil.com",
+      link: "mailto:aitelkadiwiam@gamil.com"
     },
     {
       icon: <Phone className="text-primary" size={24} />,
@@ -64,7 +64,25 @@ const handleSubmit = (e) => {
       title: "Localisation",
       value: "Maroc",
       link: "#"
-    }
+    },
+    {
+  icon: (
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/2111/2111650.png"
+      alt="WhatsApp"
+      className="w-6 h-6 animate-bounce"
+    />
+  ),
+  title: "WhatsApp",
+  value: "+212 702 207 281",
+  link: "https://wa.me/212702207281"
+}
+
+
+    
+
+
+
   ];
 
   const socialLinks = [

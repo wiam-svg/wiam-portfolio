@@ -11,7 +11,7 @@ const Skills = () => {
     {
       icon: <Server className="text-primary" size={28} />,
       title: "Frameworks",
-      skills: ["Laravel", "React", "Bootstrap", "Tailwind CSS"]
+      skills: ["Laravel", "React", "Bootstrap", "Tailwind CSS",'Node.js','Express.js']
     },
     {
       icon: <Database className="text-primary" size={28} />,
@@ -21,7 +21,7 @@ const Skills = () => {
     {
       icon: <Palette className="text-primary" size={28} />,
       title: "Outils & Design",
-      skills: ["Power Designer", "Git", "VS Code", "Figma",'Staruml','Jira','Power BI']
+      skills: ["Power Designer", "Git","VS Code", "Figma",'Staruml','Jira','Power BI','n8n','Docker','Cursor']
     }
   ];
 
