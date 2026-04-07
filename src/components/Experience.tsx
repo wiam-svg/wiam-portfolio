@@ -364,7 +364,7 @@ const Experience = () => {
     {
       title: "Baccalauréat Scientifique Physiques",
       institution: "Lycée Ibno Hazam",
-      period: "2020-2023",
+      period: "C",
       description: "Sciences Physiques",
       icon: GraduationCap,
     }

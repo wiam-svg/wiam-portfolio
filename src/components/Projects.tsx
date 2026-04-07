@@ -1,10 +1,45 @@
-import { ExternalLink, Github, Star, Users, MessageSquare } from 'lucide-react';
+import { ExternalLink, Github, Star, Users, MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import repareBladi from '@/assets/reparebladi-project.jpg';
+import lesJardins from '@/assets/lejardindelasante-project.jpg';
+import statelyHome from '@/assets/statelyhome.jpg';
+import paralagrand from '@/assets/paralagrand.jpg';
+import enjoyExperiences from '@/assets/enjoyexperiences.jpg';
+import prodig from '@/assets/prodig.jpg';
+import { useState } from 'react';
 
 const Projects = () => {
+  const [showMore, setShowMore] = useState(false);
+  const projectsToShow = showMore ? 6 : 3;
+  
   const projects = [
+    {
+      title: "Les Jardins de la Santé",
+      subtitle: "Écologie & Wellness - Sanctuaire pour le corps et l'esprit",
+      description: "Plateforme web pour un écolodge et wellness resort offrant une expérience immersive de détente et de bien-être. Site vitrine avec système de réservation, présentation des services, activités et offres exclusives.",
+      image: lesJardins,
+      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      features: [
+        "Système de réservation en ligne",
+        "Présentation des services et activités",
+        "Galerie d'images interactive",
+        "Interface responsive et élégante",
+        "Design immersif et authentique",
+        "Intégration des réseaux sociaux"
+      ],
+      status: "Projet Professionnel",
+      period: "En production",
+      company: "Les Jardins de la Santé",
+      githubUrl: "https://github.com/jaouad-sudo/lejardindelasanteFront",
+      githubBackUrl: "https://github.com/jaouad-sudo/lejardindelasanteBack",
+      liveUrl: "https://www.lesjardinsdelasante.com/",
+      highlights: {
+        users: "---",
+        reports: "---",
+        satisfaction: "---"
+      }
+    },
     {
       title: "RepareBladi",
       subtitle: "Plateforme collaborative urbaine",
@@ -24,6 +59,107 @@ const Projects = () => {
       company: "Tsuki Digital INVEST",
       githubUrl: "#",
       liveUrl: "#",
+      highlights: {
+        users: "---",
+        reports: "---",
+        satisfaction: "---"
+      }
+    },
+    {
+      title: "Stately Home",
+      subtitle: "Plateforme immobilière de luxe",
+      description: "Application web complète pour la vente et gestion de propriétés immobilières. Plateforme présentant les propriétés haut de gamme avec recherche avancée, galeries photos et gestion des demandes.",
+      image: statelyHome,
+      technologies: ["React", "Vite", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
+      features: [
+        "Catalogue de propriétés immobilières",
+        "Recherche et filtrage avancés",
+        "Galerie photos interactive",
+        "Gestion des demandes de visite",
+        "Dashboard propriétaire",
+        "Interface responsive et élégante"
+      ],
+      status: "Projet Professionnel",
+      period: "En production",
+      company: "Stately Home",
+      githubUrl: "https://github.com/jaouad-sudo/stateFront",
+      githubBackUrl: "https://github.com/jaouad-sudo/lejardindelasanteBack",
+      liveUrl: "https://statelyhome.ma/",
+      highlights: {
+        users: "---",
+        reports: "---",
+        satisfaction: "---"
+      }
+    },
+    {
+      title: "Paralagrand",
+      subtitle: "Plateforme digitale",
+      description: "Application web pour la gestion et présentation de services. Solution complète avec interface utilisateur intuitive et fonctionnalités avancées.",
+      image: paralagrand,
+      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      features: [
+        "Présentation des services",
+        "Interface responsive",
+        "Système de gestion intégré",
+        "Design moderne et élégant",
+        "Performance optimisée",
+        "SEO friendly"
+      ],
+      status: "Projet Professionnel",
+      period: "En production",
+      company: "Paralagrand",
+      githubUrl: "https://github.com/jaouad-sudo/Paralagrand",
+      liveUrl: "https://para.prodig.ma/",
+      highlights: {
+        users: "---",
+        reports: "---",
+        satisfaction: "---"
+      }
+    },
+    {
+      title: "Enjoy Experiences",
+      subtitle: "Plateforme de voyage et expériences",
+      description: "Application web dédiée à la découverte et à la réservation d'expériences de voyage uniques et mémorables.",
+      image: enjoyExperiences,
+      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      features: [
+        "Catalogue d'expériences de voyage",
+        "Système de réservation",
+        "Galerie photos interactive",
+        "Avis et évaluations",
+        "Interface responsive",
+        "Design immersif"
+      ],
+      status: "Projet Professionnel",
+      period: "En production",
+      company: "Enjoy Experiences",
+      githubUrl: "#",
+      liveUrl: "https://enjoyexperiences.ma/",
+      highlights: {
+        users: "---",
+        reports: "---",
+        satisfaction: "---"
+      }
+    },
+    {
+      title: "Prodig",
+      subtitle: "Agence digitale",
+      description: "Plateforme web pour une agence digitale présentant les services, portefeuille et expertise en transformation numérique.",
+      image: prodig,
+      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      features: [
+        "Présentation des services",
+        "Portefeuille de projets",
+        "Testimonials clients",
+        "Blog et ressources",
+        "Interface responsive",
+        "SEO optimisé"
+      ],
+      status: "Projet Professionnel",
+      period: "En production",
+      company: "Prodig",
+      githubUrl: "#",
+      liveUrl: "https://prodig.ma/",
       highlights: {
         users: "---",
         reports: "---",
@@ -59,7 +195,7 @@ const Projects = () => {
 
         {/* Featured Project */}
         <div className="mb-16">
-          {projects.map((project, index) => (
+          {projects.slice(0, projectsToShow).map((project, index) => (
             <Card key={index} className="project-card border-0 overflow-hidden slide-up">
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Project Image */}
@@ -69,11 +205,11 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-64 lg:h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4">
+                  {/* <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                       Projet Principal
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Project Details */}
@@ -81,14 +217,32 @@ const Projects = () => {
                   <CardHeader className="p-0 mb-6">
                     <div className="flex items-start justify-between mb-2">
                       <CardTitle className="text-2xl text-primary">{project.title}</CardTitle>
-                      {/* <div className="flex gap-2">
-                        <Button variant="ghost" size="icon" className="hover:text-primary">
-                          <Github size={20} />
-                        </Button>
-                        <Button variant="ghost" size="icon" className="hover:text-primary">
-                          <ExternalLink size={20} />
-                        </Button>
-                      </div> */}
+                      <div className="flex gap-2">
+                        {project.githubUrl !== "#" && (
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" title="Frontend GitHub">
+                            <Button variant="ghost" size="icon" className="hover:text-primary">
+                              <Github size={20} />
+                            </Button>
+                          </a>
+                        )}
+                        {project.githubBackUrl && project.githubBackUrl !== "#" && (
+                          <div className="flex items-center gap-1">
+                            <a href={project.githubBackUrl} target="_blank" rel="noopener noreferrer" title="Backend GitHub">
+                              <Button variant="ghost" size="icon" className="hover:text-primary">
+                                <Github size={20} />
+                              </Button>
+                            </a>
+                           
+                          </div>
+                        )}
+                        {project.liveUrl !== "#" && (
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon" className="hover:text-primary">
+                              <ExternalLink size={20} />
+                            </Button>
+                          </a>
+                        )}
+                      </div>
                     </div>
                     <p className="text-light font-medium">{project.subtitle}</p>
                     <div className="flex items-center gap-4 text-sm text-light mt-2">
@@ -159,6 +313,28 @@ const Projects = () => {
               </div>
             </Card>
           ))}
+          
+          {/* Show More / Show Less Button */}
+          {projects.length > 3 && (
+            <div className="flex justify-center mt-12">
+              <Button 
+                onClick={() => setShowMore(!showMore)}
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-2 flex items-center gap-2"
+              >
+                {showMore ? (
+                  <>
+                    <span>Afficher moins</span>
+                    <ChevronUp size={20} />
+                  </>
+                ) : (
+                  <>
+                    <span>Afficher plus</span>
+                    <ChevronDown size={20} />
+                  </>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Upcoming Projects */}
