@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import repareBladi from '@/assets/reparebladi-project.jpg';
 import lesJardins from '@/assets/lejardindelasante-project.jpg';
 import statelyHome from '@/assets/statelyhome.jpg';
-import paralagrand from '@/assets/paralagrand.jpg';
+import paralagrand from '@/assets/Paralagrand.jpg';
 import enjoyExperiences from '@/assets/enjoyexperiences.jpg';
 import prodig from '@/assets/prodig.jpg';
 import { useState } from 'react';
